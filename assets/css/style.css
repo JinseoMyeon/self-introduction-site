@@ -74,6 +74,7 @@ header {
     display: inline-block;
     align-items: center;
     justify-content: center;
+    letter-spacing: -0.04rem;
 
     -webkit-user-select:none;
     -moz-user-select:none;
@@ -104,9 +105,9 @@ header {
 }
 
 section {
-    position: absolute;
+    position: fixed;
     display: inline-block;
-    margin-top: 28vh;
+    margin-top: 30vh;
     margin-left: 5vw;
 }
 
