@@ -104,6 +104,12 @@ header {
     transition: color 0.3s ease-in-out;
 }
 
+.text-header.selected-header {
+    color: var(--gray700);
+    font-weight: 800;
+    transition: color 0.3s ease-in-out;
+}
+
 section {
     position: fixed;
     display: inline-block;
