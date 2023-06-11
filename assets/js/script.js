@@ -1,4 +1,5 @@
-const text = document.getElementById("accent-description")
+const text = document.getElementById("accent-description");
+const titleText = document.getElementById("hover-title");
 
 const letters = [
     "개발자",
@@ -45,3 +46,11 @@ function wait(ms) {
 }
 
 setTimeout(remove, 3000);
+
+titleText.addEventListener("mouseover", () => {
+    titleText.classList.add("hovered");
+});
+
+titleText.addEventListener("mouseout", () => {
+    titleText.classList.remove("hovered");
+});
