@@ -227,7 +227,7 @@ section {
 
 .field-article {
     margin-top: 55vh;
-    margin-bottom: 37.5vh;
+    margin-bottom: 35vh;
     width: 90vw;
 }
 
@@ -236,7 +236,7 @@ section {
     font-weight: 700;
     font-size: 3.25vw;
     line-height: 140%;
-    color: var(--gray900);
+    color: var(--gray1000);
 }
 
 .light-subtitle {
@@ -251,6 +251,7 @@ section {
     font-size: 1.5vw;
     line-height: 140%;
     color: var(--gray800);
+    text-decoration: none;
 }
 
 .margin-subtitle {
