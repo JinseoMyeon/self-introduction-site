@@ -2,38 +2,54 @@
 @import url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css');
 
 :root {
-    --gray50 : #F2F5F8;
-    --gray100 : #E2E7EC;
-    --gray200 : #C6CFD7;
-    --gray300 : #B1BAC5;
-    --gray400 : #9099A6;
-    --gray500 : #787F8A;
-    --gray600 : #5F666D;
-    --gray700 : #42464A;
-    --gray800 : #2E3438;
-    --gray900 : #181D21;
+    --gray100 : #F2F5F8;
+    --gray200 : #E2E7EC;
+    --gray300 : #C6CFD7;
+    --gray400 : #B1BAC5;
+    --gray500 : #9099A6;
+    --gray600 : #787F8A;
+    --gray700 : #5F666D;
+    --gray800 : #42464A;
+    --gray900 : #2E3438;
+    --gray1000 : #181D21;
     --brand : #297DFC;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(to bottom, #F2F5F8, #ECF2F9) no-repeat fixed center;
-    overflow: hidden;
+    background: linear-gradient(to bottom, #F2F5F8, #EAF2FF );
+    width: calc(100vw - (100vw - 100%));
+    height: calc(100vh - (100vh - 100%));
+    overflow: visible;
     letter-spacing: -0.01rem;
+    overflow-x: hidden;
+    z-index: -2;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.background-color {
+    margin: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    z-index: -2;
+    background: linear-gradient(to bottom, #F2F5F8, #EAF2FF );
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     float: right;
     vertical-align: bottom;
     right: 0;
     bottom: 0;
+    z-index: 2;
 }
 
 .background-image {
     width: 50vw;
-    z-index: -1;
+    z-index: 2;
     margin-right: -10vw;
     margin-bottom: -10vw;
     -webkit-user-select:none;
@@ -45,7 +61,7 @@ body {
 
 @keyframes logomotion {
     0% { transform: translateY(0); }
-    50% { transform: translateY(-2.5vw); }
+    50% { transform: translateY(-4.5vw); }
     100% { transform: translateY(0); }
 }
 
@@ -56,21 +72,21 @@ body {
     padding: 1.125vw 2.25vw;
     border-radius: 1.125vw;
     border: none;
-    background-color: var(--gray100);
+    background-color: var(--gray200);
     color: var(--gray800);
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
 }
 .button:hover {
-    background-color: var(--gray200);
+    background-color: var(--gray300);
     transition: background-color 0.2s ease-in-out;
 }
 
 header {
     position: fixed;
-    margin-top: 8vh;
-    margin-left: 5vw;
     width: 100vw;
+    height: 14vh;
+    top: 0;
     display: inline-block;
     align-items: center;
     justify-content: center;
@@ -80,18 +96,28 @@ header {
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none;
+    z-index: 2;
+
+    background-color: rgba(242, 245, 248, 0.5);
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
+}
+
+.header {
+    margin-top: 8vh;
+    margin-left: 5vw;
 }
 
 .logo-header {
-    height: 3rem;
+    height: 2.5vw;
     vertical-align: middle;
 }
 
 .text-header {
     font-family: 'NanumSquareNeo';
-    font-size: 1.5rem;
+    font-size: 1.25vw;
     font-weight: 700;
-    margin-left: 6vw;
+    margin-left: 5vw;
     color: var(--gray700);
     text-decoration: none;
     vertical-align: middle;
@@ -105,16 +131,20 @@ header {
 }
 
 .text-header.selected-header {
-    color: var(--gray700);
+    color: var(--gray800);
     font-weight: 800;
     transition: color 0.3s ease-in-out;
 }
 
 section {
-    position: fixed;
+    position: absolute;
     display: inline-block;
-    margin-top: 30vh;
+    margin-top: 10vh;
     margin-left: 5vw;
+}
+
+.margin-section {
+    margin-top: 20vh;
 }
 
 .title-main {
@@ -136,7 +166,7 @@ section {
 }
 
 #hover-title.hovered {
-    color: var(--gray50);
+    color: var(--gray100);
     transition: color 0.5s ease-in-out;
 }
 
@@ -164,7 +194,7 @@ section {
     font-family: 'SUIT';
     font-weight: 500;
     font-size: 1.75vw;
-    color: var(--gray700);
+    color: var(--gray800);
 }
 
 #accent-description {
@@ -175,17 +205,75 @@ section {
 #accent-description::after {
     content: '';
     margin-inline: .1rem .1rem;
-    border-right: 1.5px solid var(--gray50);
+    border-right: 1.5px solid var(--gray100);
     animation: cursor 1.5s infinite steps(1);
 }
 
 @keyframes cursor {
     0% { border-right: 1.5px solid var(--brand); }
-    50% { border-right: 1.5px solid var(--gray50); }
+    50% { border-right: 1.5px solid var(--gray100); }
     100% { border-right: 1.5px solid var(--brand); }
 }
 
 .button-main {
     margin-top: 2.5rem;
 
+}
+
+.field-article.first-field {
+    margin-top: 20vh;
+    width: 90vw;
+}
+
+.field-article {
+    margin-top: 55vh;
+    margin-bottom: 37.5vh;
+    width: 90vw;
+}
+
+.text-subtitle {
+    font-family: 'SUIT';
+    font-weight: 700;
+    font-size: 3.25vw;
+    line-height: 140%;
+    color: var(--gray900);
+}
+
+.light-subtitle {
+    font-weight: 600;
+    color: var(--gray500);
+}
+
+.text-thirdtitle {
+    font-family: 'SUIT';
+    margin-top: 1.5vh;
+    font-weight: 600;
+    font-size: 1.5vw;
+    line-height: 140%;
+    color: var(--gray800);
+}
+
+.margin-subtitle {
+    margin-top: 1vh;
+}
+
+.line-subtitle {
+    width: 6vw;
+    border: 2px solid var(--brand);
+    border-radius: 2px;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 3vh;
+}
+
+.div-article {
+    margin-top: 3vh;
+}
+
+.text-article {
+    font-family: 'SUIT';
+    font-weight: 400;
+    font-size: 1.25vw;
+    line-height: 160%;
+    color: var(--gray700);
 }
