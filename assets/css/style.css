@@ -44,12 +44,12 @@ body {
     vertical-align: bottom;
     right: 0;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
 }
 
 .background-image {
     width: 50vw;
-    z-index: 2;
+    z-index: 3;
     margin-right: -10vw;
     margin-bottom: -10vw;
     -webkit-user-select:none;
@@ -85,7 +85,7 @@ body {
 header {
     position: fixed;
     width: 100vw;
-    height: 14vh;
+    height: calc(8vh + 4vw);
     top: 0;
     display: inline-block;
     align-items: center;
@@ -249,7 +249,7 @@ section {
     margin-top: 1.5vh;
     font-weight: 600;
     font-size: 1.5vw;
-    line-height: 140%;
+    line-height: 160%;
     color: var(--gray800);
     text-decoration: none;
 }
