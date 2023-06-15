@@ -99,7 +99,7 @@ header {
     z-index: 2;
 
     background-color: rgba(242, 245, 248, 0.5);
-    -webkit-backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -277,4 +277,73 @@ section {
     font-size: 1.25vw;
     line-height: 160%;
     color: var(--gray700);
+}
+
+.sns-button {
+    width: 25vw;
+    height: 5vw;
+    background-color: #fff;
+    border-radius: 1.125vw;
+    border: 1.5px solid var(--gray300);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+    margin-bottom: 1vw;
+}
+
+.sns-button.no-pointer {
+    cursor: default;
+}
+
+.sns-button.no-pointer:hover {
+    background-color: #fff;
+    border: 1.5px solid var(--gray300);
+    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.sns-button:hover {
+    background-color: var(--gray200);
+    border: 1.5px solid var(--gray400);
+    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.image-sns {
+    width: 2.5vw;
+    height: 2.5vw;
+    margin-top: 1.25vw;
+    margin-left: 1.25vw;
+}
+
+.text-sns {
+    position: absolute;
+    font-family: 'SUIT';
+    font-weight: 600;
+    font-size: 1.25vw;
+    line-height: 110%;
+    color: var(--gray700);
+    margin-top: 1.2vw;
+    margin-left: 1vw;
+}
+
+.describe-sns {
+    font-family: 'SUIT';
+    font-weight: 400;
+    font-size: 1vw;
+    color: var(--gray500);
+}
+
+.info-text {
+    position: absolute;
+    bottom: 5vw;
+    font-family: 'SUIT';
+    font-weight: 400;
+    font-size: 0.75vw;
+    color: var(--gray500);
+    text-decoration: none;
+    line-height: 140%;
+}
+
+.a {
+    color: var(--gray600);
+    font-weight: 500;
+    text-decoration: none;
 }
