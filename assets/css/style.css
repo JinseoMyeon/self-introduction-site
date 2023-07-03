@@ -20,7 +20,7 @@ body {
     width: calc(100vw - (100vw - 100%));
     height: calc(100vh - (100vh - 100%));
     overflow: visible;
-    letter-spacing: -0.01rem;
+    letter-spacing: -1%;
     overflow-x: hidden;
     z-index: -2;
 }
@@ -33,7 +33,7 @@ body {
     margin: 0;
     position: fixed;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     z-index: -2;
     background: linear-gradient(to bottom, #F2F5F8, #EAF2FF );
 }
@@ -68,15 +68,13 @@ body {
 .button {
     font-family: 'SUIT';
     font-weight: 600;
-    font-size: 1.125vw;
-    padding: 1.125vw 2.25vw;
-    border-radius: 1.125vw;
     border: none;
     background-color: var(--gray200);
     color: var(--gray800);
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
 }
+
 .button:hover {
     background-color: var(--gray300);
     transition: background-color 0.2s ease-in-out;
@@ -85,13 +83,12 @@ body {
 header {
     position: fixed;
     width: 100vw;
-    height: calc(8vh + 4vw);
     top: 0;
+    left: 0;
     display: inline-block;
     align-items: center;
     justify-content: center;
-    letter-spacing: -0.04rem;
-
+    letter-spacing: -1%;
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
@@ -103,36 +100,13 @@ header {
     backdrop-filter: blur(10px);
 }
 
-.header {
-    margin-top: 8vh;
-    margin-left: 5vw;
-}
-
-.logo-header {
-    height: 2.5vw;
-    vertical-align: middle;
-}
-
 .text-header {
     font-family: 'NanumSquareNeo';
-    font-size: 1.25vw;
     font-weight: 700;
     margin-left: 5vw;
     color: var(--gray700);
     text-decoration: none;
     vertical-align: middle;
-    transition: color 0.3s ease-in-out;
-}
-
-.text-header:hover {
-    color: var(--gray900);
-    font-weight: 800;
-    transition: color 0.3s ease-in-out;
-}
-
-.text-header.selected-header {
-    color: var(--gray800);
-    font-weight: 800;
     transition: color 0.3s ease-in-out;
 }
 
@@ -143,15 +117,9 @@ section {
     margin-left: 5vw;
 }
 
-.margin-section {
-    margin-top: 20vh;
-}
-
 .title-main {
     font-family: 'SUIT';
     font-weight: 800;
-    font-size: 3.5vw;
-    letter-spacing: 1.5rem;
     line-height: 140%;
     color: var(--gray900);
     margin-left: 0.5rem;
@@ -159,7 +127,7 @@ section {
 
 #hover-title {
     width: fit-content;
-    height: 10px;
+    height: px;
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
     margin-left: 0.5rem;
     z-index: 1;
@@ -186,14 +154,9 @@ section {
     transition: width 0.5s ease-in-out;
 }
 
-.description-main {
-    margin-top: 2rem;
-}
-
 .text-description {
     font-family: 'SUIT';
     font-weight: 500;
-    font-size: 1.75vw;
     color: var(--gray800);
 }
 
@@ -204,9 +167,14 @@ section {
 
 #accent-description::after {
     content: '';
-    margin-inline: .1rem .1rem;
+    margin-inline: .01rem .01rem;
     border-right: 1.5px solid var(--gray100);
     animation: cursor 1.5s infinite steps(1);
+}
+
+.light-subtitle {
+    font-weight: 600;
+    color: var(--gray500);
 }
 
 @keyframes cursor {
@@ -215,135 +183,372 @@ section {
     100% { border-right: 1.5px solid var(--brand); }
 }
 
-.button-main {
-    margin-top: 2.5rem;
+@media screen and (max-width: 1024px) {
+    .button {
+        font-size: 2.25vw;
+        padding: 1.75vw 3.625vw;
+        border-radius: 1.75vw;
+    }
 
+    header {
+        height: calc(7vh + 7.5vw);
+    }
+    
+    .header {
+        margin-top: 7vh;
+        margin-left: 5vw;
+    }
+
+    .logo-header {
+        height: 4vw;
+        vertical-align: middle;
+    }
+
+    .text-header {
+        font-size: 2vw;
+    }
+
+    .margin-section {
+        margin-top: 15vh;
+    }
+
+    .title-main {
+        font-size: 5vw;
+        letter-spacing: 3vw;
+        margin-left: 1vw;
+    }
+
+    #hover-title {
+        margin-left: 1vw;
+    }
+
+    #hover-title::before {
+        height: 7vw;
+    }
+
+    #hover-title.hovered::before {
+        width: 98%;
+    }
+
+    .description-main {
+        margin-top: 2.5vh;
+    }    
+
+    .text-description {
+        font-size: 3vw;
+    }
+
+    .button-main {
+        margin-top: 2.5vh;
+    }
+
+    .field-article.first-field {
+        margin-top: 7.5vh;
+        width: 90vw;
+    }
+
+    .field-article {
+        margin-top: 15vh;
+        margin-bottom: 15vh;
+        width: 90vw;
+    }
+
+    .text-subtitle {
+        font-family: 'SUIT';
+        font-weight: 700;
+        font-size: 4.5vw;
+        line-height: 140%;
+        color: var(--gray1000);
+    }
+
+    .text-thirdtitle {
+        font-family: 'SUIT';
+        font-weight: 600;
+        font-size: 2.5vw;
+        line-height: 140%;
+        color: var(--gray800);
+        text-decoration: none;
+    }
+
+    .margin-subtitle {
+        margin-top: 1vh;
+    }
+
+    .line-subtitle {
+        width: 6vw;
+        border: 1.25px solid var(--brand);
+        border-radius: 2px;
+        text-align: left;
+        margin-left: 0;
+        margin-top: 2vh;
+    }
+
+    .div-article {
+        margin-top: 2vh;
+    }
+
+    .text-article {
+        font-family: 'SUIT';
+        font-weight: 400;
+        font-size: 2.25vw;
+        line-height: 1.6em;
+        color: var(--gray700);
+    }
+
+    .sns-button {
+        width: 50vw;
+        height: 10vw;
+        background-color: #fff;
+        border-radius: 1.75vw;
+        border: 1.25px solid var(--gray300);
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+        margin-bottom: 2vh;
+    }
+
+    .sns-button.no-pointer {
+        cursor: default;
+    }
+
+    .sns-button.no-pointer:hover {
+        background-color: #fff;
+        border: 1.25px solid var(--gray300);
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+    }
+
+    .sns-button:hover {
+        background-color: var(--gray200);
+        border: 1.25px solid var(--gray400);
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+    }
+
+    .image-sns {
+        width: 6vw;
+        height: 6vw;
+        margin-top: 2vw;
+        margin-left: 2vw;
+    }
+
+    .text-sns {
+        position: absolute;
+        font-family: 'SUIT';
+        font-weight: 600;
+        font-size: 2.5vw;
+        line-height: 110%;
+        color: var(--gray700);
+        margin-top: 2.3vw;
+        margin-left: 2.25vw;
+    }
+
+    .describe-sns {
+        font-family: 'SUIT';
+        font-weight: 400;
+        font-size: 2vw;
+        color: var(--gray500);
+    }
+
+    .info-text {
+        position: absolute;
+        bottom: 5vw;
+        font-family: 'SUIT';
+        font-weight: 400;
+        font-size: 1.5vw;
+        color: var(--gray500);
+        text-decoration: none;
+        line-height: 140%;
+    }
+
+    .a {
+        color: var(--gray600);
+        font-weight: 500;
+        text-decoration: none;
+    }
 }
 
-.field-article.first-field {
-    margin-top: 20vh;
-    width: 90vw;
+@media screen and (min-width: 1025px) {
+
+    .button {
+        font-family: 'SUIT';
+        font-weight: 600;
+        font-size: 1.125vw;
+        padding: 1.125vw 2.25vw;
+        border-radius: 1.125vw;
+    }
+
+    header {
+        height: calc(8vh + 4vw);
+    }
+
+    .header {
+        margin-top: 8vh;
+        margin-left: 5vw;
+    }
+
+    .logo-header {
+        height: 2.5vw;
+        vertical-align: middle;
+    }
+
+    .text-header {
+        font-size: 1.25vw;
+    }
+
+    .text-header:hover {
+        color: var(--gray900);
+        font-weight: 800;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .text-header.selected-header {
+        color: var(--gray800);
+        font-weight: 800;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .margin-section {
+        margin-top: 20vh;
+    }
+
+    .title-main {
+        font-size: 3.5vw;
+        letter-spacing: 1.5rem;
+    }
+
+    .description-main {
+        margin-top: 2rem;
+    }
+
+    .text-description {
+        font-size: 1.75vw;
+    }
+    
+
+    .button-main {
+        margin-top: 2.5rem;
+
+    }
+
+    .field-article.first-field {
+        margin-top: 20vh;
+        width: 90vw;
+    }
+
+    .field-article {
+        margin-top: 55vh;
+        margin-bottom: 35vh;
+        width: 90vw;
+    }
+
+    .text-subtitle {
+        font-family: 'SUIT';
+        font-weight: 700;
+        font-size: 3.25vw;
+        line-height: 140%;
+        color: var(--gray1000);
+    }
+
+    .text-thirdtitle {
+        font-family: 'SUIT';
+        margin-top: 1.5vh;
+        font-weight: 600;
+        font-size: 1.5vw;
+        line-height: 160%;
+        color: var(--gray800);
+        text-decoration: none;
+    }
+
+    .margin-subtitle {
+        margin-top: 1vh;
+    }
+
+    .line-subtitle {
+        width: 6vw;
+        border: 2px solid var(--brand);
+        border-radius: 2px;
+        text-align: left;
+        margin-left: 0;
+        margin-top: 3vh;
+    }
+
+    .div-article {
+        margin-top: 3vh;
+    }
+
+    .text-article {
+        font-family: 'SUIT';
+        font-weight: 400;
+        font-size: 1.25vw;
+        line-height: 160%;
+        color: var(--gray700);
+    }
+
+    .sns-button {
+        width: 25vw;
+        height: 5vw;
+        background-color: #fff;
+        border-radius: 1.125vw;
+        border: 1.5px solid var(--gray300);
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+        margin-bottom: 1vw;
+    }
+
+    .sns-button.no-pointer {
+        cursor: default;
+    }
+
+    .sns-button.no-pointer:hover {
+        background-color: #fff;
+        border: 1.5px solid var(--gray300);
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+    }
+
+    .sns-button:hover {
+        background-color: var(--gray200);
+        border: 1.5px solid var(--gray400);
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+    }
+
+    .image-sns {
+        width: 2.5vw;
+        height: 2.5vw;
+        margin-top: 1.25vw;
+        margin-left: 1.25vw;
+    }
+
+    .text-sns {
+        position: absolute;
+        font-family: 'SUIT';
+        font-weight: 600;
+        font-size: 1.25vw;
+        line-height: 110%;
+        color: var(--gray700);
+        margin-top: 1.2vw;
+        margin-left: 1vw;
+    }
+
+    .describe-sns {
+        font-family: 'SUIT';
+        font-weight: 400;
+        font-size: 1vw;
+        color: var(--gray500);
+    }
+
+    .info-text {
+        position: absolute;
+        bottom: 5vw;
+        font-family: 'SUIT';
+        font-weight: 400;
+        font-size: 0.75vw;
+        color: var(--gray500);
+        text-decoration: none;
+        line-height: 140%;
+    }
+
+    .a {
+        color: var(--gray600);
+        font-weight: 500;
+        text-decoration: none;
 }
 
-.field-article {
-    margin-top: 55vh;
-    margin-bottom: 35vh;
-    width: 90vw;
-}
-
-.text-subtitle {
-    font-family: 'SUIT';
-    font-weight: 700;
-    font-size: 3.25vw;
-    line-height: 140%;
-    color: var(--gray1000);
-}
-
-.light-subtitle {
-    font-weight: 600;
-    color: var(--gray500);
-}
-
-.text-thirdtitle {
-    font-family: 'SUIT';
-    margin-top: 1.5vh;
-    font-weight: 600;
-    font-size: 1.5vw;
-    line-height: 160%;
-    color: var(--gray800);
-    text-decoration: none;
-}
-
-.margin-subtitle {
-    margin-top: 1vh;
-}
-
-.line-subtitle {
-    width: 6vw;
-    border: 2px solid var(--brand);
-    border-radius: 2px;
-    text-align: left;
-    margin-left: 0;
-    margin-top: 3vh;
-}
-
-.div-article {
-    margin-top: 3vh;
-}
-
-.text-article {
-    font-family: 'SUIT';
-    font-weight: 400;
-    font-size: 1.25vw;
-    line-height: 160%;
-    color: var(--gray700);
-}
-
-.sns-button {
-    width: 25vw;
-    height: 5vw;
-    background-color: #fff;
-    border-radius: 1.125vw;
-    border: 1.5px solid var(--gray300);
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
-    margin-bottom: 1vw;
-}
-
-.sns-button.no-pointer {
-    cursor: default;
-}
-
-.sns-button.no-pointer:hover {
-    background-color: #fff;
-    border: 1.5px solid var(--gray300);
-    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
-}
-
-.sns-button:hover {
-    background-color: var(--gray200);
-    border: 1.5px solid var(--gray400);
-    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
-}
-
-.image-sns {
-    width: 2.5vw;
-    height: 2.5vw;
-    margin-top: 1.25vw;
-    margin-left: 1.25vw;
-}
-
-.text-sns {
-    position: absolute;
-    font-family: 'SUIT';
-    font-weight: 600;
-    font-size: 1.25vw;
-    line-height: 110%;
-    color: var(--gray700);
-    margin-top: 1.2vw;
-    margin-left: 1vw;
-}
-
-.describe-sns {
-    font-family: 'SUIT';
-    font-weight: 400;
-    font-size: 1vw;
-    color: var(--gray500);
-}
-
-.info-text {
-    position: absolute;
-    bottom: 5vw;
-    font-family: 'SUIT';
-    font-weight: 400;
-    font-size: 0.75vw;
-    color: var(--gray500);
-    text-decoration: none;
-    line-height: 140%;
-}
-
-.a {
-    color: var(--gray600);
-    font-weight: 500;
-    text-decoration: none;
 }
